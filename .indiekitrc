@@ -27,37 +27,29 @@
       }
     }
   },
-  "plugins": [
-    [
-      "@indiekit/preset-hugo",
-      {
-        "frontMatterFormat": "toml"
-      }
-    ],
-    [
-      "@indiekit/syndicator-mastodon",
-      {
-        "includePermalink": true,
+    "plugins": [
+    "@indiekit/preset-hugo",
+    "@indiekit/store-github",
+    "@indiekit/store-s3",
+    "@indiekit/syndicator-mastodon"
+  ],
+  "@indiekit/preset-hugo": {
+    "frontMatterFormat": "toml"
+  },
+  "@indiekit/store-github": {
+    "user": "eclecticpassions",
+    "repo": "burgeonlab-micropub",
+    "branch": "main"
+  },
+  "@indiekit/store-s3": {
+    "region": "eu-south-mil",
+    "endpoint": "https://s3.eu-south-mil.io.cloud.ovh.net",
+    "bucket": "indiekit-media-burg"
+  },
+  "@indiekit/syndicator-mastodon": {
+    "includePermalink": true,
         "checked": false,
         "url": "https://fosstodon.org",
         "user": "eclecticpassions"
-      }
-    ],
-    [
-      "@indiekit/store-s3",
-      {
-        "region": "eu-south-mil",
-        "endpoint": "https://s3.eu-south-mil.io.cloud.ovh.net",
-        "bucket": "indiekit-media-burg"
-      }
-    ],
-    [
-      "@indiekit/store-github",
-      {
-        "user": "eclecticpassions",
-        "repo": "burgeonlab-micropub",
-        "branch": "main"
-      }
-    ]
-  ]
+  }
 }
